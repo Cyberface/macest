@@ -99,15 +99,25 @@ uniform distribution, this can be interpreted as MACEst saying "I don't know wha
 I've never seen an image of a horse!".
 
 ## Getting Started
-To install MACEst run the following cmd:
-```shell script
+We recommend using Python 3.10 for MACEst.
+
+Create a virtual environment and source into it:
+```bash
+python3.10 -m venv venv
+source venv/bin/activate
+```
+
+Install dependencies and MACEst: 
+```bash
+pip install -r requirements.txt
+pip install -r requirements_notebooks.txt
 pip install macest
 ```
 
 Or add `macest` to your project's `requirements.txt` file as a dependency. 
 
 ### Software Prerequisites
-To import and use MACEst we recommend Python version >= `3.6.8`. 
+To import and use MACEst we recommend Python version >= `3.10.*`. 
 
 ## Basic Usage
 Below shows examples of using MACEst for classification and regression.
@@ -199,7 +209,7 @@ To use MACEst for a regression task, the following example can be used:
 ### MACEst with sparse data (see notebooks for more details)
 ```python
 import scipy
-from scipy.sparse import csr_matrix 
+from scipy.sparse import csr_matrix
 from scipy.sparse import random as sp_rand
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -242,8 +252,20 @@ macest_point_prediction_conf = macest_model.predict_confidence_of_point_predicti
 See the [`CONTRIBUTING.md`](./CONTRIBUTING.md) file for information about contributing to MACEst.
 
 
+## Related Publications
+
+For more information about the underlying methodology behind MACEst, then please refer to our 
+accompanying research paper that has been shared on arXiv:
+
+* "[MACEst: The reliable and trustworthy Model Agnostic Confidence 
+Estimator](https://arxiv.org/abs/2109.01531). Rhys Green, Matthew Rowe, and Alberto Polleri. 2021."
+
+## Security
+
+Please consult the [security guide](./SECURITY.md) for our responsible security vulnerability disclosure process
+
 ## License
-Copyright (c) 2021, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2021, 2023 Oracle and/or its affiliates. All rights reserved.
 
 This library is licensed under Universal Permissive License (UPL) 1.0 as shown at 
 https://oss.oracle.com/licenses/upl
